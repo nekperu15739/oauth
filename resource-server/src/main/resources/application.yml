@@ -1,7 +1,12 @@
-security:
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:8080/user
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth-server:8090/oauth/token
 
-server:
-  port: 8081
+logging:
+  level:
+    org.springframework.security.oauth2.jwt: trace
+    org.springframework.security.oauth2.server.resource.web: trace
+    org.springframework.security.authentication: trace
