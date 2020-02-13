@@ -105,3 +105,9 @@ OAuth2AuthorizationServerConfiguration
 
 
  @Beans of type AuthorizationServerConfigurer (e.g. by extending AuthorizationServerConfigurerAdapter)
+
+One
+SecurityConfig
+AuthorizationServerSecurityConfiguration
+AuthorizationServerEndpointsConfiguration
+AuthorizationServerEndpointsConfigurer

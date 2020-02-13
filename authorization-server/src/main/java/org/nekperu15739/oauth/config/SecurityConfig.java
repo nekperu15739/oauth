@@ -43,4 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .roles("user")
                 .build());
     }
+
+    @Override
+    protected void configure(final HttpSecurity http) throws Exception {
+        super.configure(http);
+    }
 }
