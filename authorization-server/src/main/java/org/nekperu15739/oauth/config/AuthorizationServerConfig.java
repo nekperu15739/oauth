@@ -20,7 +20,7 @@ import java.security.KeyPair;
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
+//@Configuration
 @RequiredArgsConstructor
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 

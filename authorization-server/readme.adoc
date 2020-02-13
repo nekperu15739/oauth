@@ -1,9 +1,8 @@
-
+Spring security
 https://docs.spring.io/spring-security/site/docs/current/reference/html/oauth2.html#oauth2login-advanced-userinfo-endpoint
 
-
-https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/boot-features-security-oauth2-authorization-server.html
-
+Spring boot:
+https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/index.html
 Resource server config url:
 http://localhost:8090/.well-known/oauth-authorization-server/oauth/token
 
@@ -94,3 +93,15 @@ sample:
   ]
 }
 ----
+
+
+SecurityConfig
+AuthorizationServerSecurityConfiguration
+AuthorizationServerTokenServicesConfiguration
+AuthorizationServerEndpointsConfiguration
+AuthorizationServerEndpointsConfigurer
+OAuth2AuthorizationServerConfiguration
+
+
+
+ @Beans of type AuthorizationServerConfigurer (e.g. by extending AuthorizationServerConfigurerAdapter)

@@ -10,7 +10,7 @@ import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.security.KeyPair;
 
-@Configuration
+//@Configuration
 public class KeyPairConfig {
 
     @Bean

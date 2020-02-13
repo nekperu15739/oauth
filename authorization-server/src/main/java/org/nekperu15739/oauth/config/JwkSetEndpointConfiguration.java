@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerSecurityConfiguration;
 
-@Import(AuthorizationServerEndpointsConfiguration.class)
-@Configuration
+//@Import(AuthorizationServerEndpointsConfiguration.class)
+//@Configuration
 public class JwkSetEndpointConfiguration extends AuthorizationServerSecurityConfiguration {
 
     public static final String WELL_KNOWN_JWKS_JSON = "/.well-known/jwks.json";

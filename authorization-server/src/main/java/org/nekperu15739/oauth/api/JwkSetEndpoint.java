@@ -17,7 +17,7 @@ import static org.nekperu15739.oauth.config.JwkSetEndpointConfiguration.TOKEN_KE
 import static org.nekperu15739.oauth.config.JwkSetEndpointConfiguration.WELL_KNOWN_OPENID_CONFIGURATION;
 
 @Slf4j
-@FrameworkEndpoint
+//@FrameworkEndpoint
 @RequiredArgsConstructor
 public class JwkSetEndpoint {
 
