@@ -18,13 +18,14 @@ security:
       grant-type: password, authorization_code
       scope: profile
       registered-redirect-uri: https://app.getpostman.com/oauth2/callback
+      access-token-validity-seconds: 60
     authorization:
       jwt:
         key-store: classpath:.keystore-oauth2-demo
-#        key-value: admin1234
+        #        key-value: admin1234
         key-store-password: admin1234
         key-alias: oauth2-demo-key
-#      filter-order: 5
+      check-token-access: permitAll()
 
 server:
   port: 8090
@@ -33,4 +34,5 @@ logging:
   level:
     org.springframework.security: debug
     org.springframework.security.oauth2: debug
+    org.springframework.security.core.userdetails.jdbc: debug
 #    org.springframework.boot.autoconfigure: debug

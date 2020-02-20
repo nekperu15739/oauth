@@ -35,11 +35,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     private final AuthenticationManager authenticationManager;
     private final KeyPair keyPair;
-
-    @Bean
-    PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
+    private final PasswordEncoder passwordEncoder;
 
     /**
      * org.springframework.security.oauth2.core.AuthorizationGrantType
@@ -49,7 +45,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         clients
             .inMemory()
             .withClient("client-1234")
-            .secret(passwordEncoder().encode("secret"))
+            .secret(passwordEncoder.encode("secret"))
             .authorizedGrantTypes(PASSWORD, AUTHORIZATION_CODE)
             .scopes("profile")
 //            .redirectUris("http://localhost:8080/login/oauth2/code/ryanair")

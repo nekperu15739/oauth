@@ -94,6 +94,11 @@ sample:
 }
 ----
 
+Postman collection
+[source,postman]
+----
+https://www.getpostman.com/collections/a26d78cbb01abe59e236
+----
 
 SecurityConfig
 AuthorizationServerSecurityConfiguration

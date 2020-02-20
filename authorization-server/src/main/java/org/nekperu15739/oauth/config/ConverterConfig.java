@@ -16,35 +16,7 @@ import org.springframework.util.Assert;
 import java.util.Optional;
 
 //@Configuration
-@RequiredArgsConstructor
 public class ConverterConfig {
 
-    private final AuthorizationServerProperties authorization;
-    private final ApplicationContext context;
 
-//    @Bean
-    public TokenStore tokenStore() {
-        return new JwtTokenStore(accessTokenConverter2());
-    }
-
-//    @Bean
-    public JwtAccessTokenConverter accessTokenConverter2() {
-        Assert.notNull(this.authorization.getJwt().getKeyStore(), "keyStore cannot be null");
-        Assert.notNull(this.authorization.getJwt().getKeyStorePassword(), "keyStorePassword cannot be null");
-        Assert.notNull(this.authorization.getJwt().getKeyAlias(), "keyAlias cannot be null");
-
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-
-        Resource keyStore = this.context.getResource(this.authorization.getJwt().getKeyStore());
-        char[] keyStorePassword = this.authorization.getJwt().getKeyStorePassword().toCharArray();
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(keyStore, keyStorePassword);
-
-        String keyAlias = this.authorization.getJwt().getKeyAlias();
-        char[] keyPassword = Optional.ofNullable(
-            this.authorization.getJwt().getKeyPassword())
-            .map(String::toCharArray).orElse(keyStorePassword);
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair(keyAlias, keyPassword));
-
-        return converter;
-    }
 }
